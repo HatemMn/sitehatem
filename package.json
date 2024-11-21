@@ -10,17 +10,18 @@
 		"check": "astro check",
 		"dev": "astro dev",
 		"format": "prettier \"**/*\" --ignore-unknown",
-		"format:write": "pnpm format --write",
+		"format:write": "yarn format --write",
 		"lint": "eslint . --max-warnings 0",
 		"lint:knip": "knip",
 		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
 		"lint:package": "npmPkgJsonLint .",
-		"lint:packages": "pnpm dedupe --check",
+		"lint:packages": "yarn dedupe --check",
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"preview": "astro preview",
 		"start": "astro dev",
 		"tsc": "tsc"
 	},
+	
 	"dependencies": {
 		"@astrojs/check": "^0.9.3",
 		"@astrojs/mdx": "^3.1.6",

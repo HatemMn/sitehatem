@@ -15,15 +15,4 @@ export const collections = {
 				title: z.string(),
 			}),
 	}),
-	speaking: defineCollection({
-		schema: z.object({
-			category: z.string(),
-			date: z.date(),
-			event: z.string(),
-			href: z.string(),
-			links: z.record(z.string()).optional(),
-			location: z.string().optional(),
-			title: z.string().optional(),
-		}),
-	}),
 };
