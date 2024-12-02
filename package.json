@@ -1,7 +1,7 @@
 {
-	"name": "dot-com",
+	"name": "sitehatem",
 	"version": "0.0.1",
-	"description": "Personal site for Josh Goldberg. Hooray! ✨",
+	"description": "Personal site of Hatem Mnaouer :).",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
@@ -21,7 +21,6 @@
 		"start": "astro dev",
 		"tsc": "tsc"
 	},
-	
 	"dependencies": {
 		"@astrojs/check": "^0.9.3",
 		"@astrojs/mdx": "^3.1.6",
