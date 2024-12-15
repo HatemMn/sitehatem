@@ -1,6 +1,7 @@
 ---
+import github from "~/assets/icons/github.svg";
 import linkedin from "~/assets/icons/linkedin.svg";
-import twitter from "~/assets/icons/twitter.svg";
+import youtube from "~/assets/icons/youtube.svg";
 
 import SocialImage from "../SocialImage.astro";
 
@@ -11,21 +12,26 @@ interface Props {
 	url: URL;
 }
 
+const text = [
+	`📝 ${Astro.props.title}`,
+	`"${Astro.props.description}" - by @JoshuaKGoldberg`,
+	"",
+].join("%0a%0a");
+
+const url = Astro.props.url.toString();
+
 const channels = [
 	[
-		"LinkedIn",
-		`https://linkedin.com/sharing/share-offsite/?url=${Astro.props.url.toString()}`,
-		linkedin,
+		"youtube",
+		`https://bsky.app/intent/compose?text=${text}%0A%0A${url}`,
+		youtube,
 	],
 	[
-		"Twitter",
-		`https://twitter.com/intent/tweet?text=${[
-			`📝 ${Astro.props.title}`,
-			`"${Astro.props.description}" - by @JoshuaKGoldberg`,
-			"",
-		].join("%0a%0a")}&url=${Astro.props.url.toString()}`,
-		twitter,
+		"LinkedIn",
+		`https://linkedin.com/sharing/share-offsite/?url=${url}`,
+		linkedin,
 	],
+	["github", `https://fosstodon.org/share?text=${text}`, github],
 ] as const;
 ---
 
