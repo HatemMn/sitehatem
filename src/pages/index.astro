@@ -1,5 +1,6 @@
 ---
 import hatemCostume from "~/assets/costume.webp";
+import { Anchor } from "~/components/Anchor";
 import BodyContents from "~/components/BodyContents.astro";
 import Socials from "~/components/Socials.astro";
 import { Text } from "~/components/Text";
@@ -8,24 +9,32 @@ import HeroLayout from "../layouts/HeroLayout.astro";
 ---
 
 <HeroLayout
-	alt="Josh's half-smiling happy face"
+	alt="Hatem"
+	description="I'm a software engineer working in the confidential computing ecosystem."
 	images={{ dark: hatemCostume, light: hatemCostume }}
 	primary="Hi! I'm Hatem."
-	secondary="I'm a software engineer working in the confidential computing ecosystem."
-	slug="josh"
+	slug="Hatem"
 >
 	<Fragment slot="secondary">
-		I'm an open source maintainer in the TypeScript ecosystem.
+		I'm an R&D software engineer working in the confidential computing
+		ecosystem.
 	</Fragment>
 	<Socials slot="tertiary" />
 	<BodyContents class="about">
 		<Text as="p" fontSize="medium" fontWeight="light">
-			I work to make web development better, most notably on typescript-eslint:
-			<br class="tabletUp" />
-			the tooling that enables ESLint and Prettier run on TypeScript code.
+			I work to make internet a more secure space for everyone, but also love to
+			share my thoughts and knowledge about tech topics in my blog during my
+			free time.
+			<!-- <br class="tabletUp" />
+			the tooling that enables ESLint and Prettier run on TypeScript code. -->
 		</Text>
 		<Text as="p" fontSize="medium" fontWeight="light">
-			I’m the author of Learning TypeScript (O’Reilly), a Microsoft MVP,
+			I am also a founding member of the <Anchor
+				href="https://www.linkedin.com/groups/12858416/"
+				target="_blank"
+			>
+				IPP Alumni Association
+			</Anchor>.
 			<br class="tabletUp" />
 			an international conference speaker, and a community organizer.
 		</Text>
