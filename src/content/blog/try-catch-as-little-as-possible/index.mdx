@@ -1,15 +1,13 @@
 ---
-description: "This is a general explainer for pull request reviews where a try...catch statement is used more than I think it needs to be."
+description: "This is a placeholder article, real content coming soon!"
 image:
-  alt: Ice Cube looking happy with a red life preserver around his neck
-  src: "~/assets/blog/ice-cube-happy-fishing.png"
+  alt: Some dude pushing a rock
+  src: "~/assets/blog/sisyphus.jpg"
 pubDate: 2024-11-27
 tags: [
-	"errors",
-	"exceptions",
-	"try catch",
+	"testing",
 ]
-title: "Try...Catch As Little As Possible"
+title: "Just a Placeholder article ... for Now! 🚧"
 ---
 
 import checkYourselfBeforeYouWreckYourselfCallie from "~/assets/blog/check-yourself-before-you-wreck-yourself-callie.webm";
@@ -17,207 +15,65 @@ import checkYourselfBeforeYouWreckYourselfIce from "~/assets/blog/check-yourself
 import checkYourselfBeforeYouWreckYourselfZach from "~/assets/blog/check-yourself-before-you-wreck-yourself-zach.webm";
 import LabeledImage from "~/components/blog/mdx/LabeledImage.astro";
 import LabeledVideo from "~/components/blog/mdx/LabeledVideo.astro";
+import contributorsTable from "~/assets/blog/contributors-table.jpg";
 
 Hi!
-You might have been linked this blog post in a PR that has a [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statement.
-There might be a request for changes linking to this blog post, asking that you avoid a `try...catch`, or failing that, reduce its scope.
+If you are reading this, you might be one of the first travelers that have set foot on my website. I am glad to have you here! 🎉
 
-This blog post is an explainer for why to avoid `try...catch` statements when possible, along with examples of alternate strategies you can take.
+## Why did you open source your personal website?
 
-<LabeledVideo
-	alt="Zach Galifanakis from 'The Hangover' angrily saying 'check yourself... before you wreck yourself'."
-	description="Listen to Alan. Knowing the correct ways of self-checking will reduce occurrences of self-wrecking."
-	original="https://tenor.com/view/hangover-gif-12838870"
-	src={checkYourselfBeforeYouWreckYourselfZach}
-/>
+First things first, you might have noticed that this website is itself a fork of yet another open source project called [dot-com](https://github.com/JoshuaKGoldberg/dot-com) maintained by Joshua Goldberg, a full time open sourcer and one of the most
+notable figures in the TypeScript ecosystem. I have been following his work for quite some time now and I have always been inspired by his dedication to the open source community.
 
-## Avoid `try...catch` if possible
+I have always wanted to contribute to the open source community but I never knew where to start. So when I saw that Joshua had open sourced his personal website, I thought to myself, "This is it! Why don't I start this with my own website ?" And here we are!
+Thanks to this small portfolio website, I was able to learn new technologies that I do not use in my daily work such as Astro (of which I became a huge fan !). But this isn't the most interesting part, actually, open source development is a bit different from
+its entreprise counterpart. While we might intuitively think that open source development is all about coding, it is actually more about communication, collaboration and sharing. Good communication protocols are important to have to make a team's work more efficient,
+but for open source projects, it is actually mandatory. Imagine working with people from all around the world, with different time zones, cultures, and expertise. How will you be able to manage the flow of information and the code reviews ?
 
-I advise using `try...catch` statements as little as possible.
-They should only ever be used when in _exception_ cases: ones that aren't expected to happen normally, or when an API outside of your control might throw.
-
-If you know some situation will happen in code, your code should handle it as directly as possible.
-If something is crashing, figure out the root cause of _why_ it's crashing, and handle that root cause.
+Hopefully, open source projects have a lot of tools to help with that, I will be talking about some of which that I would have never discovered if I kept only focusing on private products development !
 
 > 👉 See [Checking Before Wrecking](#checking-before-wrecking) below for an example.
 
-## Reducing `try...catch` scope as much as possible
+## The All-Contributors Specification: Because Every Contribution Matters! 🌟
 
-If you absolutely must use a `try...catch`, try to put as little as possible inside it.
+The All-Contributors specification is a game-changer in the open-source world, re-imagining how we recognize diverse contributions beyond just code. Born from the need to acknowledge all forms of project support, even non code-related ones
+including bug reports, documentation, translations ... All of these aspects are necessary a community project to thrive. By enforcing such a specification in your open source codebase, you value the work of all contributors, and hence encourage them to participate to the development of
+a project they like no matter their set of skills.
 
-`try...catch` statements are a very blunt tool.
-They catch _any_ exception, including ones that you might not expect.
+The beauty of this specification lies in its simplicity - by using a
+standardized format and emojis to represent different contribution types, it
+makes contribution recognition both fun and inclusive.
 
-Instead of wrapping large swathes of code in a `try...catch`, wrap only the specific piece of code that is expected to throw.
-
-> 👉 See [Trying Less](#trying-less) below for an example.
-
-<LabeledVideo
-	alt="Sara Ramirez as Callie Torres in 'Grey\'s Anatomy' saying 'check yourself before you wreck yourself'."
-	description="Callie Torres is a doctor, so she knows. Self-checks will prevent self-wrecks."
-	original="https://tenor.com/view/callietorres-greysanatomy-sararamirez-check-yourself-before-you-wreck-yourself-gif-5961639"
-	src={checkYourselfBeforeYouWreckYourselfCallie}
+<LabeledImage
+	alt="Example of an All-Contributors table in the README of a GitHub repository."
+	description="Here is an example of an All-Contributors table in the README of a GitHub repository. Can you see me ?"
+	original="https://github.com/JoshuaKGoldberg/dot-com"
+	src={contributorsTable}
 />
 
-## Examples
+> ❓ This looks interesting, but isn't it a bit of a tremendous work to maintain such a table ?
 
-These are some contrived examples showcasing the two strategies in order.
-I separated them out because I know a lot of people wont't have the time to read them in detail.
+I saw this coming ! the specification creators thought about that too. They have developed a bot that will automatically update the table for you. All you have to do is to add a comment in the PR you want to acknowledge and the bot will do the rest for you. How cool is that ?
+After installing the bot in your repository like specified in the [documentation](https://allcontributors.org/docs/fr/bot/installation), you can use the following command in your PRs to acknowledge the contributors:
 
-### Checking Before Wrecking
-
-Suppose you have a `emphasize` JavaScript function that's supposed to turn a string into an uppercase version with an exclamation mark:
-
-```js
-// emphasize.js
-export function emphasize(text) {
-	return `${text.toUpperCase()}!`;
-}
+```bas
+@all-contributors please add @username for [type]
 ```
 
-It might be used in an application to log the value of a `--message` argument.
-Running the following file like `node index.js --message "Hello world"` should print `HELLO WORLD!`:
+Where `@username` is the GitHub username of the contributor and `[type]` is the type of contribution they made. The bot will then automatically update the table in your README with the new contributor and their contribution type.
+In the table below, I compiled a list of the most common contribution types and their corresponding emojis:
 
-```js
-// index.js
-import { parseArgs } from "node:util";
-import { emphasize } from "./emphasize.js";
+| Contribution keyword | Emoji |
+| -------------------- | ----- |
+| code                 | 💻    |
+| doc                  | 📖    |
+| bug                  | 🐛    |
+| translation          | 🌍    |
+| ideas                | 🤔    |
+| design               | 🎨    |
+| security             | 🛡️    |
 
-const { values } = parseArgs({
-	options: {
-		message: { type: "string" },
-	},
-});
-
-console.log(emphasize(values.message));
-```
-
-Let's say you're seeing errors from `emphasize` complaining that `text.toUpperCase()` is not a function:
-
-```plaintext
-Uncaught TypeError: text.toUpperCase is not a function
-    at emphasize (emphasize.js:2:20)
-    at index.js:6:13
-```
-
-A bit of debugging might show that the `message` argument being passed to `emphasize` is actually `undefined`.
-One fix could be to wrap the contents of `emphasize` in a `try...catch`, so errors attempting to call `.toUpperCase()` on the `undefined` value are caught and reported:
-
-```js
-// 🛑 See later - there's a better way!
-export function emphasize(text) {
-	try {
-		return `${text.toUpperCase()}!`;
-	} catch (error) {
-		console.warn("Oh no:", error);
-		return text;
-	}
-}
-```
-
-But, that's a "band-aid" fix: it doesn't address the root issue of `emphasize` being passed the wrong type of data.
-Band-aid fixes are almost never the right strategy.
-Most of the time, it's better to address root problems so they don't present issues elsewhere in code.
-
-Here, the "unhappy" case was when users don't provide a `message` argument.
-They might be running `node index.js` without `--message`.
-When that happens, `message`'s value is `undefined` rather than a `string`.
-
-A better fix might be to print a better error if there's no `message` provided:
-
-```js
-import { parseArgs } from "node:util";
-import { emphasize } from "./emphasize.js";
-
-const { values } = parseArgs({
-	options: {
-		message: { type: "string" },
-	},
-});
-
-if (values.message) {
-	console.log(emphasize(values.message));
-} else {
-	console.error("No --message provided.");
-	process.exitCode = 1;
-}
-```
-
-By refactoring to handle the "unhappy" case separately, the code didn't have to worry about invalid data being passed to `emphasize`.
-
-> 💡 In TypeScript terms, we made sure the argument passed to `emphasize` matched the expected type of the parameter: `string`, not `string | undefined`.
-
-### Trying Less
-
-Let's say you have a `fileIncludes` function that determines whether some file includes a string.
-It reads the file from disk as text, then checks whether that text includes the search string:
-
-```ts
-import fs from "node:fs/promises";
-
-async function fileIncludes(filePath: string, search: string) {
-	const data = await fs.readFile(filePath);
-	const text = data.toString();
-
-	return text.includes(search);
-}
-```
-
-`fileIncludes` will throw if no file exists under `filePath`.
-So, it might be tempting to wrap the function's body in a `try...catch`:
-
-```ts
-import fs from "node:fs/promises";
-
-async function fileIncludes(filePath: string, search: string) {
-	// 🛑 See later - there's a better way!
-	try {
-		const data = await fs.readFile(filePath);
-		const text = data.toString();
-
-		return text.includes(search);
-	} catch (error) {
-		console.warn(`Failed to read ${filePath}:`, error);
-		return false;
-	}
-}
-```
-
-There's no need to wrap _all_ of the code inside `fileIncludes` in the `try...catch`.
-Only the call to `fs.readFile` is expected to throw.
-Even if another line of code were to throw, it wouldn't likely be for the logged reason _"Failed to read ..."_.
-
-A more targeted strategy would be to only wrap the one line in a `try...catch`:
-
-```ts
-import fs from "node:fs/promises";
-
-async function fileIncludes(filePath: string, search: string) {
-	let data;
-
-	try {
-		data = await fs.readFile(filePath);
-	} catch (error) {
-		console.warn(`Failed to read ${filePath}:`, error);
-		return false;
-	}
-
-	const text = data.toString();
-
-	return text.includes(search);
-}
-```
-
-This way, only the one line that might throw an error is handled by the `try...catch`.
-Developers reading the `fileIncludes` function can more easily understand what specifically might fail.
-Any other unexpected exception that occurs would fall back to however the project handles unexpected exceptions.
-
-<LabeledVideo
-	alt="Ice Cube in 'Check Yo Self' saying 'check yourself before you wreck yourself'."
-	description="Ice Cube's been saying this for years. Remembering to check is an essential step for avoiding a wreck."
-	original="https://tenor.com/view/wreck-check-yourself-before-you-wreck-yourself-check-yo-self-ice-cube-gif-5076649"
-	src={checkYourselfBeforeYouWreckYourselfIce}
-/>
+This is of course not an exhaustive list, you can find the full list of contribution types and their corresponding emojis in the [official documentation](https://allcontributors.org/docs/fr/overview).
 
 ## Further Reading
 
@@ -227,3 +83,7 @@ If you want to read more about why `try...catch` is something to avoid when poss
 - [Why TypeScript Doesn't Include a throws Keyword](https://www.learningtypescript.com/articles/why-typescript-doesnt-include-a-throws-keyword)
 
 Thank you for sending a pull request in, and thanks for iterating on it! 💙
+
+```
+
+```

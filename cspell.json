@@ -1,5 +1,25 @@
 {
-	"dictionaries": ["css", "html", "node", "npm", "typescript"],
-	"ignorePaths": [".github", "dist", "node_modules", "yarn.lock", "public"],
-	"words": ["astrojs", "Hatem", "konami", "Mnaouer", "sitehatem", "tseslint"]
+	"dictionaries": [
+		"css",
+		"html",
+		"node",
+		"npm",
+		"typescript"
+	],
+	"ignorePaths": [
+		".github",
+		"dist",
+		"node_modules",
+		"yarn.lock",
+		"public"
+	],
+	"words": [
+		"astrojs",
+		"chanbara",
+		"Hatem",
+		"konami",
+		"Mnaouer",
+		"sitehatem",
+		"tseslint"
+	]
 }
