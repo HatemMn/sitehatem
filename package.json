@@ -69,8 +69,5 @@
 		"solid-js": "^1.8.22",
 		"typescript": "^5.5.2",
 		"typescript-eslint": "^8.5.0"
-	},
-	"engines": {
-		"node": ">=18"
 	}
 }
