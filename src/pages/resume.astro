@@ -9,11 +9,11 @@ import HeroLayout from "../layouts/HeroLayout.astro";
 ---
 
 <HeroLayout
-	alt="Smiling cat receiving head scratches next to a laptop showing VS Code"
+	alt="TODO!"
 	description={blogDescription}
 	images={{ dark: hatemTableau, light: hatemTableau }}
-	primary="Blog"
-	title="Goldblog"
+	primary="Resume"
+	title="Hatem's resume"
 >
 	<Fragment slot="secondary">{blogDescription}</Fragment>
 	<HeroTertiary slot="tertiary">
@@ -26,6 +26,16 @@ import HeroLayout from "../layouts/HeroLayout.astro";
 	</HeroTertiary>
 
 	<BodyContents>
-		<!--TODO(hatem) : add resume -->
+		<embed
+			height="1600px"
+			src="/resume/HMN_RESUME_ENG_A4.pdf"
+			type="application/pdf"
+			width="100%"
+		/>
+		<p>
+			You can also <a download href="/resume/HMN_RESUME_ENG_A4.pdf"
+				>download the resume</a
+			>.
+		</p>
 	</BodyContents>
 </HeroLayout>
