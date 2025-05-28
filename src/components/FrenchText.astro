@@ -1,0 +1,35 @@
+---
+export interface Props {
+	children: any;
+	class?: string | undefined;
+}
+---
+
+<span class:list={["french-text", Astro.props.class]}>
+	<slot />
+</span>
+
+<style>
+	.french-text {
+		font-weight: bold;
+		background: linear-gradient(
+			to right,
+			#002395 33%,
+			#ffffff 33% 66%,
+			#ed2939 66%
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5); /* Very light stroke */
+		font-family: "Inter", "Helvetica Neue", "Arial", sans-serif;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		display: inline-block;
+		transition: transform 0.3s ease;
+	}
+
+	.french-text:hover {
+		transform: rotate(-2deg) scale(1.05); /* Slight rotation and scale on hover */
+	}
+</style>

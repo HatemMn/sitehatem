@@ -1,11 +1,14 @@
 ---
 import { Anchor } from "./Anchor";
 import { EmojiBlastHeart } from "./EmojiBlastHeart";
+import FrenchText from "./FrenchText.astro";
 import { Text } from "./Text";
 ---
 
 <Text as="footer" fontSize="small" fontWeight="light">
-	Made with <EmojiBlastHeart client:visible /> in Paris
+	Made with <EmojiBlastHeart client:visible /> in <FrenchText
+		>Paris
+	</FrenchText>
 	<br />
 	<Anchor
 		class="anchor"
