@@ -17,5 +17,6 @@
 			"options": { "parser": "yaml" }
 		}
 	],
-	"useTabs": true
+	"useTabs": true,
+	"ignore": "package.json"
 }

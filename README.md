@@ -7,7 +7,8 @@
 
 ## Contributors ✨
 
-As a fork of the open source Joshua Goldberg's <a href="https://github.com/HatemMn/dot-com" target="_blank">dot-com repository</a>. I would like to thank him and all the contributors for their work !
+As a fork of the open source Joshua Goldberg's <a href="https://github.com/HatemMn/dot-com" target="_blank">dot-com repository</a>.
+I would like to thank him and all the contributors for their work !
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
