@@ -10,26 +10,19 @@ import BaseLayout from "./BaseLayout.astro";
 export interface Props {
 	alt: string;
 	class?: string | undefined;
-	description: string;
 	images: HeroImages;
 	primary: string;
 	slug?: string;
 	title?: string;
 }
 
-const {
-	description,
-	primary,
-	slug = primary.toLowerCase(),
-	title,
-} = Astro.props;
+const { primary, slug = primary.toLowerCase(), title } = Astro.props;
 
 const image = `images/${slug}`;
 ---
 
 <BaseLayout
 	{...Astro.props}
-	description={description}
 	image={`${image}.png`}
 	title={title ? `${title} | Hatem Mnaouer` : "Hatem Mnaouer"}
 >

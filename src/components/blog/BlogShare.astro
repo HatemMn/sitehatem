@@ -1,7 +1,6 @@
 ---
 import github from "~/assets/icons/github.svg";
 import linkedin from "~/assets/icons/linkedin.svg";
-import youtube from "~/assets/icons/youtube.svg";
 
 import SocialImage from "../SocialImage.astro";
 
@@ -21,11 +20,6 @@ const text = [
 const url = Astro.props.url.toString();
 
 const channels = [
-	[
-		"youtube",
-		`https://bsky.app/intent/compose?text=${text}%0A%0A${url}`,
-		youtube,
-	],
 	[
 		"LinkedIn",
 		`https://linkedin.com/sharing/share-offsite/?url=${url}`,
