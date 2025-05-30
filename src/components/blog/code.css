@@ -1,8 +1,3 @@
-/*
-Astro's default Shiki preset with theme: "css-variables" is nice,
-but doesn't highlight diff deleted/inserted lines differently.
-*/
-
 code .deleted {
 	color: var(--astro-code-color-deleted);
 }
