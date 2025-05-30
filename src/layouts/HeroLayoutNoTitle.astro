@@ -3,7 +3,6 @@ import type { HeroImages } from "~/components/HeroImage.astro";
 
 import { Anchor } from "~/components/Anchor";
 import FrenchText from "~/components/FrenchText.astro";
-import { Squiggly } from "~/components/Squiggly";
 import { Text } from "~/components/Text";
 
 import BaseLayout from "./BaseLayout.astro";
@@ -47,31 +46,6 @@ const image = `images/${slug}`;
 </BaseLayout>
 
 <style>
-	.french-text {
-		font-weight: bold;
-		background: linear-gradient(
-			to right,
-			#002395 33%,
-			/* French blue */ #ffffff 33% 66%,
-			/* White */ #ed2939 66% /* French red */
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5); /* Very light stroke */
-		font-family:
-			"Brush Script MT", "Lucida Handwriting", "Comic Sans MS", cursive;
-		font-style: italic;
-		text-transform: capitalize;
-		letter-spacing: 0.5px;
-		display: inline-block;
-		transform: rotate(-2deg);
-		transition: transform 0.3s ease;
-	}
-
-	.french-text:hover {
-		transform: rotate(2deg) scale(1.1);
-	}
 	.hero {
 		margin: clamp(2rem, 8vmin, 8rem) auto;
 		padding: 0 var(--widthPagePadding) 1rem;
