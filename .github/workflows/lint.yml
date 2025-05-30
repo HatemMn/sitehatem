@@ -4,8 +4,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: pnpm astro sync
-      - run: pnpm lint
+      - run: yarn astro sync
+      - run: yarn lint
 
 name: Lint
 
@@ -14,4 +14,4 @@ on:
 
   push:
     branches:
-      - main
+      - master

@@ -4,7 +4,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: pnpm lint:spelling
+      - run: yarn lint:spelling
 
 name: Lint Spelling
 
@@ -13,4 +13,4 @@ on:
 
   push:
     branches:
-      - main
+      - master

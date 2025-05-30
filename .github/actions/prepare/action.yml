@@ -1,15 +1,12 @@
-description: Prepares the repo for a typical CI job
+description: Prepares the repo for a typical CI job using YARN as the package manager.
 
 name: Prepare
 runs:
   steps:
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 9
     - uses: actions/setup-node@v4
       with:
-        cache: pnpm
+        cache: yarn
         node-version: "18"
-    - run: pnpm install --frozen-lockfile
+    - run: yarn install --frozen-lockfile
       shell: bash
   using: composite

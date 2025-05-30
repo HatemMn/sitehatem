@@ -15,4 +15,4 @@ name: Contributors
 on:
   push:
     branches:
-      - main
+      - master

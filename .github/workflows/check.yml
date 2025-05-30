@@ -4,7 +4,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: pnpm check
+      - run: yarn check
 
 name: Check
 
@@ -13,4 +13,4 @@ on:
 
   push:
     branches:
-      - main
+      - master

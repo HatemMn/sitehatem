@@ -20,7 +20,7 @@ export default tseslint.config(
 			"coverage",
 			"dist",
 			"node_modules",
-			"pnpm-lock.yaml",
+			"yarn.lock",
 			"src/*.d.ts",
 		],
 	},
