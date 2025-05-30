@@ -9,7 +9,7 @@ export interface BlogsGroupedProps {
 	blogs: CollectionEntry<"blog">[];
 }
 
-export function BlogsGrouped(props: BlogsGroupedProps) {
+export function BlogsGrouped(props: Readonly<BlogsGroupedProps>) {
 	return (
 		<GroupedEntries
 			groups={Object.entries(

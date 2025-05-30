@@ -8,7 +8,7 @@ export interface TabsListProps {
 	children: JSX.Element;
 }
 
-export function TabsList(props: TabsListProps) {
+export function TabsList(props: Readonly<TabsListProps>) {
 	return (
 		<Tabs.List class={styles.tabsList}>
 			{props.children}

@@ -1,16 +1,15 @@
-import type { Project, ProjectBase } from "joshuakgoldberg";
-
 import { For } from "solid-js";
 
 import { ContentEntry } from "../entries/ContentEntry";
 import styles from "./ProjectEntry.module.css";
 import { ProjectSubEntry } from "./ProjectSubEntry";
+import type { Project, ProjectBase } from "~/types";
 
 export interface ProjectEntryProps {
 	project: Project;
 }
 
-function projectUrl({ owner = "JoshuaKGoldberg", repo, url }: ProjectBase) {
+function projectUrl({ owner = "HatemMn", repo, url }: ProjectBase) {
 	return url ?? `https://github.com/${owner}/${repo}`;
 }
 
@@ -18,7 +17,7 @@ function projectTitle(project: ProjectBase) {
 	return project.name ?? project.repo;
 }
 
-export function ProjectEntry(props: ProjectEntryProps) {
+export function ProjectEntry(props: Readonly<ProjectEntryProps>) {
 	return (
 		<ContentEntry
 			description={props.project.description}
@@ -29,7 +28,11 @@ export function ProjectEntry(props: ProjectEntryProps) {
 							src: props.project.image,
 							variant: "square",
 						}
-					: undefined
+					: {
+							alt: "Generic project logo",
+							src: "images/project-icon.png",
+							variant: "square",
+						}
 			}
 			links={[
 				["Repo", projectUrl(props.project)],

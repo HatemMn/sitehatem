@@ -1,5 +1,5 @@
 ---
-import { projectCategories } from "joshuakgoldberg";
+import type { ProjectCategory } from "~/types";
 
 import hatemUniversity from "~/assets/universite.webp";
 import { Anchor } from "~/components/Anchor";
@@ -9,32 +9,64 @@ import { ProjectsTabbed } from "~/components/projects/ProjectsTabbed";
 
 import HeroLayout from "../layouts/HeroLayout.astro";
 
-const temporaryKeyAliases = new Map([
-	["Biggest Projects", "Biggest"],
-	["Just For Fun", "Shenanigans"],
-	["Tooling", "Dev Tooling"],
-]);
+declare const projectCategories: Record<string, ProjectCategory>;
+
+export { projectCategories };
+
+const description = "I work primarily with Typescript & Rust.";
 
 const categories = {
-	All: Object.values(projectCategories).flatMap(
-		(category) => category.projects
-	),
-	...Object.fromEntries(
-		Object.entries(projectCategories)
-			.map(
-				([key, category]) =>
-					[temporaryKeyAliases.get(key) ?? key, category.projects] as const
-			)
-			.sort(([a], [b]) => a.localeCompare(b))
-	),
-};
+	Academic: [
+		{
+			description:
+				"Trying to trace back the ways that smugglers use to traverse the desert using the Copernicus satellite imagery and deep learning",
+			image: "images/satellite.png",
+			name: "Remote Sensing in Desert Regions",
+			owner: "HatemMn",
+			repo: "infrastructure",
+			role: "Programmer",
 
-const description =
-	"I work primarily on open source tooling for TypeScript projects.";
+			url: "https://github.com/HatemMn/infrastructure",
+		},
+		{
+			description:
+				"Creating a generic model for the ExaMiniMD distributed molecular dynamics simulator",
+			image: "images/molecule.png",
+			name: "ExaMiniMD",
+			owner: "Researcher",
+			repo: "ExaMiniMD",
+			role: "Contributor",
+			url: "https://github.com/HatemMn/ExaMiniMD",
+		},
+	],
+	Enterprise: [
+		{
+			description: "A very fast SSE server that uses the Findex protocol",
+			image: "images/cosmian.png",
+			name: "Findex Server",
+			owner: "Cosmian",
+			repo: "personal-automation",
+			role: "Collaborator",
+			url: "https://github.com/Cosmian/findex-server",
+		},
+	],
+	Personal: [
+		{
+			description:
+				"I like open source projects, so open sourced my website too - itself a derivative of another open source project :)",
+			image: "letter-h.svg",
+			name: "My awesome open source website :D",
+			owner: "HatemMn",
+			repo: "sitehatem",
+			role: "Owner",
+			url: "https://github.com/HatemMn/sitehatem/",
+		},
+	],
+};
 ---
 
 <HeroLayout
-	alt="Josh smiling and giving a thumbs up at a podium wearing a white shirt with a pineapple pattern"
+	alt="Hatem"
 	description={description}
 	images={{
 		dark: hatemUniversity,
@@ -47,17 +79,16 @@ const description =
 		{description}
 	</Fragment>
 	<HeroTertiary slot="tertiary">
-		I also enjoy emojis and other shenanigans.
-		<br />
 		Find all these on my <Anchor
-			href="https://github.com/JoshuaKGoldberg"
+			href="https://github.com/HatemMn"
 			target="_blank"
 		>
 			GitHub profile
-		</Anchor>.
+		</Anchor>. I hereby declare that I do not own any of the projects under the
+		<em>Enterprise</em> category, but that I was involved in their development.
 	</HeroTertiary>
 
 	<BodyContents>
-		<ProjectsTabbed categories={categories} client:load />
+		<ProjectsTabbed client:load projectsByCategory={categories} />
 	</BodyContents>
 </HeroLayout>

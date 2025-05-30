@@ -9,7 +9,7 @@ export interface TabsTriggerProps {
 	value: string;
 }
 
-export function TabsTrigger(props: TabsTriggerProps) {
+export function TabsTrigger(props: Readonly<TabsTriggerProps>) {
 	return (
 		<Tabs.Trigger class={styles.trigger} value={props.value}>
 			{props.children}

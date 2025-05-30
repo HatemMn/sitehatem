@@ -1,4 +1,4 @@
-import { Tabs } from "@kobalte/core";
+import { Tabs } from "@kobalte/core/tabs";
 import { For, type JSX, createSignal } from "solid-js";
 
 import { TabsList } from "../tabs/TabsList";
@@ -12,19 +12,20 @@ export interface TabbedEntryCategoriesProps<Entry> {
 }
 
 export function TabbedEntryCategories<Entry>(
-	props: TabbedEntryCategoriesProps<Entry>,
+	props: Readonly<TabbedEntryCategoriesProps<Entry>>,
 ) {
-	const [selected, setSelected] = createSignal(
-		Object.keys(props.initialCategories)[1],
-	);
+	const [selected, setSelected] = createSignal("All");
 
 	return (
-		<Tabs.Root
+		<Tabs
 			aria-label={`Tabs of ${props.collection} categories`}
 			onChange={setSelected}
 			value={selected()}
 		>
 			<TabsList>
+				<TabsTrigger value={"All"}>
+					<TabsSquiggly active={"All" === selected()}>{"All"}</TabsSquiggly>
+				</TabsTrigger>
 				<For each={Object.keys(props.initialCategories)}>
 					{(category) => (
 						<TabsTrigger value={category}>
@@ -36,6 +37,9 @@ export function TabbedEntryCategories<Entry>(
 				</For>
 			</TabsList>
 
+			<Tabs.Content value={"All"}>
+				{props.renderCategory(Object.values(props.initialCategories).flat())}
+			</Tabs.Content>
 			<For each={Object.entries(props.initialCategories)}>
 				{([category, entries]) => (
 					<Tabs.Content value={category}>
@@ -43,6 +47,6 @@ export function TabbedEntryCategories<Entry>(
 					</Tabs.Content>
 				)}
 			</For>
-		</Tabs.Root>
+		</Tabs>
 	);
 }

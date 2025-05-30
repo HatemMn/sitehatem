@@ -1234,9 +1234,9 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@kobalte/core@^0.13.6":
-  version "0.13.9"
-  resolved "https://registry.yarnpkg.com/@kobalte/core/-/core-0.13.9.tgz#5edbe5342624fa1829b7b61e11cf2fef4ba127fa"
-  integrity sha512-TkeSpgNy7I5k8jwjqT9CK3teAxN0aFb3yyL9ODb06JVYMwXIk+UKrizoAF1ahLUP85lKnxv44B4Y5cXkHShgqw==
+  version "0.13.10"
+  resolved "https://registry.yarnpkg.com/@kobalte/core/-/core-0.13.10.tgz#67c6243be64f93f3899a347df5b12f6c4f8e059e"
+  integrity sha512-lzP64ThxZqZB6O6MnMq6w7DxK38o2ClbW3Ob6afUI6p86cUMz5Hb4rdysvYI6m1TKYlOAlFODKkoRznqybQohw==
   dependencies:
     "@floating-ui/dom" "^1.5.1"
     "@internationalized/date" "^3.4.0"
@@ -4572,13 +4572,6 @@ jiti@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-2.4.2.tgz#d19b7732ebb6116b06e2038da74a55366faef560"
   integrity sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==
-
-joshuakgoldberg@^0.15.1:
-  version "0.15.12"
-  resolved "https://registry.yarnpkg.com/joshuakgoldberg/-/joshuakgoldberg-0.15.12.tgz#88768e9e7626f572a3e41f1a74cea4fabb0f429b"
-  integrity sha512-XOzIjXjCM3v460vVcaY/99aCrPKY3fri4eOI1wuQdmq3X5NE56nG3mVwE7OOy2osUr3ByCN5gYW2Pwqz+Tsf9w==
-  dependencies:
-    chalk "^5.4.1"
 
 js-tokens@^4.0.0:
   version "4.0.0"

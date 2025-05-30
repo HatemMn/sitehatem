@@ -10,7 +10,7 @@ export interface TabsSquigglyProps {
 	children: JSX.Element;
 }
 
-export function TabsSquiggly(props: TabsSquigglyProps) {
+export function TabsSquiggly(props: Readonly<TabsSquigglyProps>) {
 	return (
 		<Squiggly
 			as="div"

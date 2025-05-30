@@ -15,7 +15,7 @@ export interface ContentEntryImageProps {
 	variant: ContentEntryImageVariant;
 }
 
-export function ContentEntryImage(props: ContentEntryImageProps) {
+export function ContentEntryImage(props: Readonly<ContentEntryImageProps>) {
 	return (
 		<img
 			alt={props.alt}
