@@ -1,5 +1,9 @@
 {
 	"$schema": "https://unpkg.com/knip@latest/schema.json",
 	"ignoreDependencies": ["sharp"],
-	"ignoreExportsUsedInFile": { "interface": true, "type": true }
+	"ignoreExportsUsedInFile": { "interface": true, "type": true },
+	"ignore": [
+		"src/components/blog/mdx/LabeledVideo.astro",
+		"src/components/blog/mdx/LabeledVideo.astro"
+	]
 }
