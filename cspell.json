@@ -1,0 +1,22 @@
+{
+	"dictionaries": ["css", "html", "node", "npm", "typescript"],
+	"ignorePaths": [".github", "dist", "node_modules", "yarn.lock", "public"],
+	"words": [
+		"astley",
+		"astrojs",
+		"chanbara",
+		"Cosmian",
+		"Findex",
+		"Hatem",
+		"kobalte",
+		"konami",
+		"M'naouer",
+		"Mnaouer",
+		"Neue",
+		"Shiki",
+		"sitehatem",
+		"sourcer",
+		"tseslint",
+		"universite"
+	]
+}

@@ -1,0 +1,76 @@
+---
+description: "This is a placeholder article, real content coming soon!"
+image:
+  alt: Some dude pushing a rock
+  src: "~/assets/blog/sisyphus.jpg"
+pubDate: 2024-11-27
+tags: [
+	"testing",
+]
+title: "Just a Placeholder article ... for Now! 🚧"
+---
+
+import LabeledImage from "~/components/blog/mdx/LabeledImage.astro";
+import contributorsTable from "~/assets/blog/table.png";
+
+Hi!
+If you are reading this, you might be one of the first travelers that have set foot on my website. I am glad to have you here! 🎉
+
+## Why did you open source your personal website?
+
+First things first, you might have noticed that this website is itself a fork of yet another open source project called [dot-com](https://github.com/JoshuaKGoldberg/dot-com) maintained by Joshua Goldberg, a full time open sourcer and one of the most
+notable figures in the TypeScript ecosystem. I have been following his work for quite some time now and I have always been inspired by his dedication to the open source community.
+
+I have always wanted to contribute to the open source community but I never knew where to start. So when I saw that Joshua had open sourced his personal website, I thought to myself, "This is it! Why don't I start this with my own website ?" And here we are!
+Thanks to this small portfolio website, I was able to learn new technologies that I do not use in my daily work such as Astro (of which I became a huge fan !). But this isn't the most interesting part, actually, open source development is a bit different from
+its enterprise counterpart. While we might intuitively think that open source development is all about coding, it is actually more about communication, collaboration and sharing. Good communication protocols are important to have to make a team's work more efficient,
+but for open source projects, it is actually mandatory. Imagine working with people from all around the world, with different time zones, cultures, and expertise. How will you be able to manage the flow of information and the code reviews ?
+
+Hopefully, open source projects have a lot of tools to help with that, I will be talking about some of which that I would have never discovered if I kept only focusing on private products development !
+
+> 👉 Enjoying the website so far ? Let me know by sharing it :)
+
+## The All-Contributors Specification: Because Every Contribution Matters! 🌟
+
+The All-Contributors specification is a game-changer in the open-source world, re-imagining how we recognize diverse contributions beyond just code. Born from the need to acknowledge all forms of project support, even non code-related ones
+including bug reports, documentation, translations ... All of these aspects are necessary a community project to thrive. By enforcing such a specification in your open source codebase, you value the work of all contributors, and hence encourage them to participate to the development of
+a project they like no matter their set of skills.
+
+The beauty of this specification lies in its simplicity - by using a
+standardized format and emojis to represent different contribution types, it
+makes contribution recognition both fun and inclusive.
+
+<LabeledImage
+	alt="Example of an All-Contributors table in the README of a GitHub repository."
+	description="Here is an example of an All-Contributors table in the README of a GitHub repository. Can you see me ?"
+	original="https://github.com/JoshuaKGoldberg/dot-com"
+	src={contributorsTable}
+/>
+
+> ❓ This looks interesting, but isn't it a bit of a tremendous work to maintain such a table ?
+
+I saw this coming ! the specification creators thought about that too. They have developed a bot that will automatically update the table for you. All you have to do is to add a comment in the PR you want to acknowledge and the bot will do the rest for you. How cool is that ?
+After installing the bot in your repository like specified in the [documentation](https://allcontributors.org/docs/fr/bot/installation), you can use the following command in your PRs to acknowledge the contributors:
+
+```bas
+@all-contributors please add @username for [type]
+```
+
+Where `@username` is the GitHub username of the contributor and `[type]` is the type of contribution they made. The bot will then automatically update the table in your README with the new contributor and their contribution type.
+In the table below, I compiled a list of the most common contribution types and their corresponding emojis:
+
+| Contribution keyword | Emoji |
+| -------------------- | ----- |
+| code                 | 💻    |
+| doc                  | 📖    |
+| bug                  | 🐛    |
+| translation          | 🌍    |
+| ideas                | 🤔    |
+| design               | 🎨    |
+| security             | 🛡️    |
+
+This is of course not an exhaustive list, you can find the full list of contribution types and their corresponding emojis in the [official documentation](https://allcontributors.org/docs/fr/overview).
+
+## Further Reading
+
+Coming soon ...

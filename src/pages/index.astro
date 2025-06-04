@@ -1,15 +1,66 @@
 ---
+import hatemCostume from "~/assets/costume.webp";
+import { Anchor } from "~/components/Anchor";
+import BodyContents from "~/components/BodyContents.astro";
+import Socials from "~/components/Socials.astro";
+import { Text } from "~/components/Text";
+
+import HeroLayout from "../layouts/HeroLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<HeroLayout
+	alt="Hatem"
+	description="I'm a software engineer working in the confidential computing ecosystem."
+	images={{ dark: hatemCostume, light: hatemCostume }}
+	primary="Hi! I'm Hatem."
+	slug="Hatem"
+>
+	<Fragment slot="secondary">
+		I'm an R&D software engineer working in the confidential computing
+		ecosystem.
+	</Fragment>
+	<Socials slot="tertiary" />
+	<BodyContents class="about">
+		<Text as="p" fontSize="medium" fontWeight="light">
+			I work to make internet a more secure space for everyone, and enjoy
+			sharing my thoughts and knowledge on my small blog.
+			<!-- <br class="tabletUp" /> -->
+		</Text>
+		<Text as="p" fontSize="medium" fontWeight="light">
+			I am also a founding member of the <Anchor
+				href="https://www.linkedin.com/groups/12858416/"
+				target="_blank"
+			>
+				IPP Alumni Association,
+			</Anchor>
+		</Text>
+		<Text as="p" fontSize="medium" fontWeight="light">
+			In my free time, I am cheerleader at Paris Cheer 🤸‍♂️ and a samurai at
+			Chanbara20 🥋.
+		</Text>
+	</BodyContents>
+</HeroLayout>
+
+<style>
+	.tabletUp {
+		display: none;
+	}
+
+	.about {
+		display: flex;
+		gap: 2rem;
+		flex-direction: column;
+		margin: 2rem 0 1rem;
+	}
+
+	@media (min-width: 700px) {
+		.tabletUp {
+			display: block;
+		}
+
+		.about {
+			margin-top: 3.5rem;
+			text-align: center;
+		}
+	}
+</style>

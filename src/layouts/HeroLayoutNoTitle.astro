@@ -1,0 +1,71 @@
+---
+import type { HeroImages } from "~/components/HeroImage.astro";
+
+import { Anchor } from "~/components/Anchor";
+import FrenchText from "~/components/FrenchText.astro";
+import { Text } from "~/components/Text";
+
+import BaseLayout from "./BaseLayout.astro";
+
+export interface Props {
+	alt: string;
+	class?: string | undefined;
+	images: HeroImages;
+	primary: string;
+	slug?: string;
+	title?: string;
+}
+
+const { primary, slug = primary.toLowerCase(), title } = Astro.props;
+
+const image = `images/${slug}`;
+---
+
+<BaseLayout
+	{...Astro.props}
+	image={`${image}.png`}
+	title={title ? `${title} | Hatem Mnaouer` : "Hatem Mnaouer"}
+>
+	<div class:list={["hero", Astro.props.class]}>
+		<div class="content">
+			<Text as="p" fontSize="subtitle" fontWeight="medium">
+				You can also checkout the <FrenchText>french</FrenchText> version of my resume
+				by
+				<Anchor href="kkk.lol">clicking here</Anchor>.
+			</Text>
+		</div>
+	</div>
+	<slot />
+</BaseLayout>
+
+<style>
+	.hero {
+		margin: clamp(2rem, 8vmin, 8rem) auto;
+		padding: 0 var(--widthPagePadding) 1rem;
+		position: relative;
+		width: var(--widthFull);
+		max-width: 100%;
+	}
+
+	.content {
+		text-align: center;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: var(--textColor);
+	}
+
+	@media (min-width: 700px) {
+		.hero {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			height: auto;
+			margin: clamp(8.5rem, 10vh, 10rem) 0 clamp(2rem, 5vh, 6rem);
+			padding: 0;
+		}
+
+		.content {
+			max-width: 600px;
+		}
+	}
+</style>

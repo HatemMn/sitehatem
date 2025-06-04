@@ -1,0 +1,23 @@
+---
+import hatemTableau from "~/assets/tableau.webp";
+import BodyContents from "~/components/BodyContents.astro";
+
+import HeroLayoutNoTitle from "../layouts/HeroLayoutNoTitle.astro";
+---
+
+<HeroLayoutNoTitle
+	alt="TODO!"
+	images={{ dark: hatemTableau, light: hatemTableau }}
+	primary="Resume"
+	title="Hatem's resume"
+>
+	<div>
+		<BodyContents>
+			<embed
+				src="/resume/HMN_RESUME_ENG_A4.pdf"
+				style={{ border: "none", height: "100vh", width: "100%" }}
+				type="application/pdf"
+			/>
+		</BodyContents>
+	</div>
+</HeroLayoutNoTitle>

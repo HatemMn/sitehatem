@@ -1,0 +1,12 @@
+description: Prepares the repo for a typical CI job using YARN as the package manager.
+
+name: Prepare
+runs:
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        cache: yarn
+        node-version: "18"
+    - run: yarn install --frozen-lockfile
+      shell: bash
+  using: composite

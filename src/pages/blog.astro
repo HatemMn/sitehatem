@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+
+import hatemTableau from "~/assets/tableau.webp";
+import { BlogsGrouped } from "~/components/blog/BlogsGrouped";
+import BodyContents from "~/components/BodyContents.astro";
+
+import HeroLayout from "../layouts/HeroLayout.astro";
+
+const blogs = await getCollection("blog");
+const blogDescription =
+	"A blog about software engineering, videos games, and some of my adventures.";
+---
+
+<HeroLayout
+	alt="Smiling cat receiving head scratches next to a laptop showing VS Code"
+	description={blogDescription}
+	images={{ dark: hatemTableau, light: hatemTableau }}
+	primary="Blog"
+	title="Hatem's Blog"
+>
+	<Fragment slot="secondary">{blogDescription}</Fragment>
+
+	<BodyContents>
+		<BlogsGrouped
+			blogs={blogs.sort((a, b) => +b.data.pubDate - +a.data.pubDate)}
+			client:load
+		/>
+	</BodyContents>
+</HeroLayout>
