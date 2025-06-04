@@ -18,7 +18,6 @@
 		"lint:packages": "yarn dedupe --check",
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"preview": "astro preview",
-		"start": "astro dev",
 		"tsc": "tsc"
 	},
 	"dependencies": {
