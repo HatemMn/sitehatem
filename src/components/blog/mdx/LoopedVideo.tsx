@@ -15,7 +15,7 @@ export function LoopedVideo(props: LoopedVideoProps) {
 					element.loop = !media.matches;
 
 					if (!media.matches) {
-						void element.play();
+						element.play();
 					}
 				}
 
