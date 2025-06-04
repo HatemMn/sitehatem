@@ -19,10 +19,10 @@ export type ContentEntryWidths = keyof typeof widths;
 
 export interface ContentEntryProps {
 	children?: JSX.Element;
-	class?: string | undefined;
-	description?: string | undefined;
-	image?: ContentEntryImageProps | undefined;
-	links?: [string, string][] | undefined;
+	class?: string;
+	description?: string;
+	image?: ContentEntryImageProps;
+	links?: [string, string][];
 	subtitle: JSX.Element;
 	title: string;
 	url: string;

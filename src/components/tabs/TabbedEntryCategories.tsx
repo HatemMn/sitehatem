@@ -24,7 +24,7 @@ export function TabbedEntryCategories<Entry>(
 		>
 			<TabsList>
 				<TabsTrigger value={"All"}>
-					<TabsSquiggly active={"All" === selected()}>{"All"}</TabsSquiggly>
+					<TabsSquiggly active={selected() === "All"}>{"All"}</TabsSquiggly>
 				</TabsTrigger>
 				<For each={Object.keys(props.initialCategories)}>
 					{(category) => (

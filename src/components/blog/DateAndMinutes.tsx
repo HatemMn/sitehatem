@@ -8,7 +8,7 @@ export interface DateAndMinutesProps {
 	body: string;
 	children?: JSX.Element;
 	date: Date;
-	year?: "numeric" | undefined;
+	year?: "numeric";
 }
 
 export function DateAndMinutes(props: DateAndMinutesProps) {
