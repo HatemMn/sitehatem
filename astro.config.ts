@@ -8,7 +8,7 @@ import { site } from "./src/constants";
 
 // https://astro.build/config
 export default defineConfig({
-	// base: "sitehatem",
+	base: "/sitehatem",
 	image: {
 		service: sharpImageService(),
 	},
@@ -17,5 +17,5 @@ export default defineConfig({
 		syntaxHighlight: "prism",
 	},
 	prefetch: true,
-	site: "https://hatemmn.github.io/sitehatem",
+	site: "https://hatemmn.github.io",
 });
