@@ -17,5 +17,5 @@ export default defineConfig({
 		syntaxHighlight: "prism",
 	},
 	prefetch: true,
-	site: "https://hatemmn.github.io",
+	site: "https://hatemmn.github.io/sitehatem",
 });
