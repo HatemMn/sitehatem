@@ -4,6 +4,7 @@ import { ContentEntry } from "../entries/ContentEntry";
 import styles from "./ProjectEntry.module.css";
 import { ProjectSubEntry } from "./ProjectSubEntry";
 import type { Project, ProjectBase } from "~/types";
+import { withBase } from "~/utils";
 
 export interface ProjectEntryProps {
 	project: Project;
@@ -25,12 +26,12 @@ export function ProjectEntry(props: Readonly<ProjectEntryProps>) {
 				props.project.image
 					? {
 							alt: `${projectTitle(props.project)} logo`,
-							src: props.project.image,
+							src: withBase(props.project.image),
 							variant: "square",
 						}
 					: {
 							alt: "Generic project logo",
-							src: "images/project-icon.png",
+							src: withBase("images/project-icon.png"),
 							variant: "square",
 						}
 			}
