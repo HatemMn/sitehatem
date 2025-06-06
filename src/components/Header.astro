@@ -1,4 +1,6 @@
 ---
+import { withBase } from "~/utils";
+
 import HeaderLink from "./HeaderLink.astro";
 import { Text } from "./Text";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -8,11 +10,6 @@ const links = [
 	["Projects", "/projects"],
 	["Resume", "/resume"],
 ] as const;
-
-const withBase = (path: string) => {
-	const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-	return `${base}${path}`;
-};
 ---
 
 <div class="fader" role="presentation"></div>

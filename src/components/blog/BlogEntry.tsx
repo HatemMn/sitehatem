@@ -2,13 +2,15 @@ import type { CollectionEntry } from "astro:content";
 
 import { ContentEntry } from "../entries/ContentEntry";
 import { DateAndMinutes } from "./DateAndMinutes";
+import { withBase } from "~/utils";
 
 export interface BlogEntryProps {
 	blog: CollectionEntry<"blog">;
 }
 
-export function BlogEntry(props: BlogEntryProps) {
-	const url = () => `/blog/${props.blog.slug}`;
+export function BlogEntry(props: Readonly<BlogEntryProps>) {
+	// found ya
+	const url = () => withBase(`/blog/${props.blog.slug}`);
 
 	return (
 		<ContentEntry

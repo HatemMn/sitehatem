@@ -7,7 +7,9 @@ export interface GroupedEntriesProps<Entry> {
 	renderEntry: (entry: Entry) => JSX.Element;
 }
 
-export function GroupedEntries<Entry>(props: GroupedEntriesProps<Entry>) {
+export function GroupedEntries<Entry>(
+	props: Readonly<GroupedEntriesProps<Entry>>,
+) {
 	return (
 		<For each={props.groups}>
 			{([category, entries]) => (

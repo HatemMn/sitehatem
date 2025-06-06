@@ -9,7 +9,7 @@ export interface EntryListProps {
 	children: JSX.Element;
 }
 
-export function CategorizedEntryList(props: EntryListProps) {
+export function CategorizedEntryList(props: Readonly<EntryListProps>) {
 	return (
 		<>
 			<Text

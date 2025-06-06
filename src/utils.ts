@@ -13,3 +13,8 @@ export function groupBy<T, K extends number | string>(
 		Object.entries(grouped).sort(([a], [b]) => a.localeCompare(b)),
 	) as typeof grouped;
 }
+
+export const withBase = (path: string) => {
+	const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+	return `${base}${path}`;
+};
