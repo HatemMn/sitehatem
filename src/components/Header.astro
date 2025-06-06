@@ -8,6 +8,11 @@ const links = [
 	["Projects", "/projects"],
 	["Resume", "/resume"],
 ] as const;
+
+const withBase = (path: string) => {
+	const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+	return `${base}${path}`;
+};
 ---
 
 <div class="fader" role="presentation"></div>
@@ -19,7 +24,7 @@ const links = [
 	<div class="links">
 		{
 			links.map(([text, href]) => {
-				return <HeaderLink href={href}>{text}</HeaderLink>;
+				return <HeaderLink href={withBase(href)}>{text}</HeaderLink>;
 			})
 		}
 	</div>
