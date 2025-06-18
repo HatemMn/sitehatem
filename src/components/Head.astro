@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 
+import { withBase } from "~/utils";
+
 interface Props {
 	description: string;
 	image: string;
@@ -68,7 +70,7 @@ const metaPairs = [
 <head>
 	<meta charset="utf-8" />
 	<link
-		href="/letter-h.svg"
+		href={withBase("/letter-h.svg")}
 		media="(prefers-color-scheme: light)"
 		rel="icon"
 		type="image/svg+xml"

@@ -16,5 +16,7 @@ export function groupBy<T, K extends number | string>(
 
 export const withBase = (path: string) => {
 	const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+	console.log("Base URL:", base);
+	console.log("Path:", path);
 	return `${base}${path}`;
 };
