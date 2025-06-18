@@ -6,16 +6,16 @@ import { Text } from "./Text";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const links = [
-	["Blog", "/blog"],
-	["Projects", "/projects"],
-	["Resume", "/resume"],
+	["Blog", "blog"],
+	["Projects", "projects"],
+	["Resume", "resume"],
 ] as const;
 ---
 
 <div class="fader" role="presentation"></div>
 <Text as="header" class="header" fontWeight="bold">
 	<div class="first">
-		<HeaderLink href={withBase("/")}>Hatem M'naouer</HeaderLink>
+		<HeaderLink href={withBase("")}>Hatem M'naouer</HeaderLink>
 		<ThemeToggle />
 	</div>
 	<div class="links">
